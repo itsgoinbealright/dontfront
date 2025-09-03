@@ -57,7 +57,7 @@ export const siteContent = {
         title: "DOWNTOWN CORE",
         description:
           "Intersection of 5th & Main - where the city's heartbeat meets creative expression",
-        image: "/images/environments/downtown-01.jpg",
+        image: "/images/environments/garbagehillfront.jpg",
         location: "5th & Main St",
         date: "March 2024",
         tags: ["urban", "intersection", "public"],
