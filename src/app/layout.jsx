@@ -3,6 +3,8 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import SmoothScrolling from './components/layout/SmoothScrolling'
 
+import Banner from './components/layout/Banner'
+
 export const metadata = {
   title: 'HIGHGUISE - Street Culture Meets High Fashion',
   description: 'Street culture meets high fashion. Documenting the intersection of art, rebellion, and style.',
@@ -14,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className="bg-white">
         <SmoothScrolling>
           <div className="min-h-screen flex flex-col">
+            <Banner/>
             <Navbar />
             <main className="flex-1">
               {children}

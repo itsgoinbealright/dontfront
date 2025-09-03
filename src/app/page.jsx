@@ -1,5 +1,6 @@
 import ContentGrid from "./components/ui/ContentGrid";
 import { getFeaturedContent } from "./data/content";
+import Banner from "./components/layout/Banner";
 
 export default function HomePage() {
   const featuredContent = getFeaturedContent();

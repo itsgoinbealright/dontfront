@@ -1,3 +1,4 @@
+// app/components/ui/ContentCard.jsx - NO ZOOM VERSION
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -81,20 +82,20 @@ export default function ContentCard({ content, layout = "standard" }) {
   }
 }
 
-// Jumbo Hero Card Component - TALLER
+// Jumbo Hero Card Component - NO ZOOM
 function JumboCard({ content, imageError, setImageError }) {
   return (
     <div className="col-span-full group">
       <Link href={`/${content.slug}`} className="block">
         <div className="relative overflow-hidden bg-white">
-          {/* MUCH TALLER Image - now uses proper editorial proportions */}
+          {/* Image without hover scale */}
           <div className="relative h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px] overflow-hidden">
             {!imageError && content.image ? (
               <Image
                 src={content.image}
                 alt={content.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover" // ← Removed group-hover:scale-105 transition-transform
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -143,7 +144,7 @@ function JumboCard({ content, imageError, setImageError }) {
   );
 }
 
-// Medium Horizontal Card Component - TALLER
+// Medium Horizontal Card Component - NO ZOOM
 function MediumCard({
   content,
   imagePosition = "left",
@@ -153,20 +154,20 @@ function MediumCard({
   return (
     <div className="col-span-1 lg:col-span-2 group">
       <Link href={`/${content.slug}`} className="block h-full">
-        <div className="bg-white overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white overflow-hidden h-full">
           <div
             className={`flex h-full min-h-[400px] md:min-h-[450px] lg:min-h-[500px] ${
               imagePosition === "right" ? "flex-row-reverse" : ""
             }`}
           >
-            {/* Image */}
+            {/* Image without zoom */}
             <div className="w-1/2 relative overflow-hidden">
               {!imageError && content.image ? (
                 <Image
                   src={content.image}
                   alt={content.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover" // ← Removed group-hover:scale-105 transition-transform
                   onError={() => setImageError(true)}
                 />
               ) : (
@@ -220,7 +221,7 @@ function MediumCard({
   );
 }
 
-// Carousel Product Card Component - TALLER
+// Carousel Product Card Component - NO ZOOM
 function CarouselCard({
   content,
   images,
@@ -234,15 +235,15 @@ function CarouselCard({
   return (
     <div className="col-span-1 lg:col-span-2 group">
       <Link href={`/${content.slug}`} className="block h-full">
-        <div className="bg-white overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
-          {/* TALLER Carousel Image */}
+        <div className="bg-white overflow-hidden h-full">
+          {/* Carousel Image without zoom */}
           <div className="relative h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden">
             {!imageError && images[currentImageIndex] ? (
               <Image
                 src={images[currentImageIndex]}
                 alt={`${content.title} ${currentImageIndex + 1}`}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover" // ← Removed group-hover:scale-105 transition-transform
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -303,7 +304,7 @@ function CarouselCard({
             )}
           </div>
 
-          {/* Content with more padding */}
+          {/* Content */}
           <div className="p-8">
             <h3 className="font-black text-3xl mb-4 leading-tight">
               {content.title}
@@ -330,20 +331,20 @@ function CarouselCard({
   );
 }
 
-// Standard Card Component - TALLER
+// Standard Card Component - NO ZOOM
 function StandardCard({ content, imageError, setImageError }) {
   return (
     <div className="col-span-1 group">
       <Link href={`/${content.slug}`} className="block h-full">
-        <div className="bg-white overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
-          {/* TALLER Image */}
+        <div className="bg-white overflow-hidden h-full">
+          {/* Image without zoom */}
           <div className="relative h-[350px] md:h-[400px] lg:h-[450px] overflow-hidden">
             {!imageError && content.image ? (
               <Image
                 src={content.image}
                 alt={content.title}
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover" // ← Removed group-hover:scale-105 transition-transform
                 onError={() => setImageError(true)}
               />
             ) : (
@@ -368,7 +369,7 @@ function StandardCard({ content, imageError, setImageError }) {
             )}
           </div>
 
-          {/* Content with more padding */}
+          {/* Content */}
           <div className="p-8">
             <h3 className="font-black text-2xl mb-4 leading-tight">
               {content.title}

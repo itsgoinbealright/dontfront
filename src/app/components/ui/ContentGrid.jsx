@@ -10,7 +10,7 @@ export default function ContentGrid({ content }) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-8 w-full max-w-none mx-auto px-3 md:px-6 lg:px-12 xl:px-20">
+    <div className="grid grid-cols-1 gap-8 w-full max-w-none mx-auto px-3 md:px-4 lg:px-5 xl:px-6">
       {content.map((item, index) => (
         <ContentCard 
           key={item.id || index}
